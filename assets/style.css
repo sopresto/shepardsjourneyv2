@@ -3,7 +3,7 @@ html {
 }
 
 .introScene {
-    background-image: url(../images/SceneIntro.jpg);
+    background-image: url(../images/sceneintro.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
