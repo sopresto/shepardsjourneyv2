@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shepard's Journey</title>
+    <link rel="stylesheet" type="text/css" href="assets/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Aclonica|Germania+One" rel='stylesheet'>
+    
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+</head>
+
+<body class="introScene"> 
+
+        <center>
+            <div class="border" id="wholegame">
+				<h1> 
+                <div id="gametitle">
+                     GAME OVER!
+				</div>
+				</h1>
+
+				<h2>
+				<div id="gametitle">
+						Your Score:
+				</div>
+
+				<div id="finalscroe">
+				</div>
+				</h2>
+
+                <br>
+                <br>
+                <p id="introParagraph"> Go ahead and submit your score. </p>
+                <br>
+
+<form>
+
+	<input type="text" placeholder="put your name in">
+	<input type="text" placeholder="put your score in">
+
+
+	<button id="submitScore">Submit your score</button>
+</form>
+
+<br>
+<h2>High Score List: </h2>
+
+<div id="highscorelist">
+	
+</div>
+</center>
+
+<!-- Firebase Reference -->
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+		var config = {
+		apiKey: "AIzaSyDU155hlBn7exNHZkQRg5ObAn1ABXaq4qo",
+		authDomain: "shepardjourney.firebaseapp.com",
+		databaseURL: "https://shepardjourney.firebaseio.com",
+		projectId: "shepardjourney",
+		storageBucket: "",
+		messagingSenderId: "469264439844"
+  };
+	
+
+	firebase.initializeApp(config);
+
+	// Create a variable to reference the database.
+	var database = firebase.database();
+
+	var leaders = [];
+
+	$('button').on('click', function(){
+		event.preventDefault();
+		
+		var nam = $('input').eq(0).val();
+		var scor = $('input').eq(1).val();
+
+		database.ref('highscores').push({
+			name: nam,
+			score: scor
+		});
+	});
+
+
+	database.ref('highscores').orderByChild("score").on("child_added", function(childSnapshot) {
+
+		leaders.push(childSnapshot.val().score + "|" + childSnapshot.val().name);
+
+		// ["4|jason"]
+
+		$('#highscorelist').empty();
+
+		leaders.sort();
+
+		$.each(leaders, function(index, value){
+			var scoreAndName = value.split("|");
+			//[4, "jason"]
+			var score = scoreAndName[0];
+			var name = scoreAndName[1];
+
+			var p = $('<p>');
+
+			var str = name + ": ";
+			str += score;
+			p.text(str);
+			$('#highscorelist').prepend(p);
+		});
+	});
+
+	$(document).ready(function(){
+		score = (time*10) + (sheep*10) + (health*5)
+    	$("#finalscroe").html(score);
+	});
+
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="assets/logic.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

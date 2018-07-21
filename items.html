@@ -1,0 +1,119 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shepard's Journey</title>
+    <link rel="stylesheet" type="text/css" href="assets/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Aclonica|Germania+One" rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+</head>
+
+<body class="introScene">
+    <center>
+        <div class="border" id="wholegame">
+            <div id="gametitle">
+                <h1> Shepard's Journey</h1>
+            </div>
+
+            <div class="border" id="questionstatus">
+                <div class="border" id="questions">
+
+                    <p>You must first decide on the items that you want to keep for your journey. As a Sheppard you typically
+                        carry a STAFF, FLUTE and some FOOD. The staff is great for fighting off attackers, the flute
+                        is used to call back your sheep and the food is used to heal yourself. They are all essential
+                        but remember you are in a race against time so any items will slow you down. Choose any items
+                        that you want to bring with you for your journey.</p>
+                </div>
+                <div id="statusTime">
+                    <div class="time border right">
+                    <h2>Time Until Sunset </h2>
+                    <div id="time"></div>
+                    </div>
+                    
+                    <div class="time border right">
+                    <h2>Health </h2>
+                    <div id="health"></div>
+                    </div>
+
+                    <div class="time border right">
+                    <h2>Sheep </h2>
+                    <div id="sheep"></div>
+                    
+                    </div>
+                </div>
+
+            </div>
+            <div class="border" id="answersitems">
+                <div class="border answerOne" id="answerOne">
+                </div>
+                <div class="border answerOne" id="answerTwo">
+                </div>
+
+                <div class="border" id="itemsContainer">
+                    <button id="food">
+                        <span id="foodDescription">Food = adds 100 health</span>
+                        <img src="images/food.JPG" alt="" height="100px" width="100px">
+                    </button>
+                    <button id="staff">
+                        <span id="staffDescription">Staff = will cause 2x damage</span>
+                        <img src="images/staff.jpg" alt="" height="100px" width="100px">
+                    </button>
+                    <button id="flute">
+                        <span id="fluteDescription">Flute = calls back 5 sheep</span>
+                        <img src="images/flute.jpg" alt="" height="100px" width="100px">
+                    </button>
+                </div>
+                <!-- <div class="border" id="items">
+                    </div> -->
+            </div>
+            <div id="itemsHolder">
+                <h2>Items In Hand</h2>
+                <br>
+                <!-- dynamically append food, staff, flute, or all items into this div -->
+            </div>
+
+            <button id="itemsCollected">Click this button when done</button>
+
+            <div id="characterContainer">
+
+                <img class="characters" id="shepicon" src="images/shep.png" alt="" height="150px" width="150px">
+
+                <img class="characters" id="sheepicon" src="images/sheepMultiple.jpg" alt="" height="150px" width="200px">
+
+                <img class="characters" id="attack" src="images/attack.png" alt="" height="60px" width="100px">
+
+                <span class="characters" id="wolf">
+                    <span class="lifeText"> LIFE: </span>
+                    <span id="wolfLife" value="100"> 100 </span>
+                    <img src="images/wolf.jpg" alt="" height="150px" width="200px">
+                </span>
+
+                <!-- <span class="characters" id="troll" style="visibility: hidden">
+                        <span class="lifeText"> LIFE: </span>
+                        <span class="charLife" value="200"> </span>
+                        <img class="troll" src="images/troll.jpg" alt="" height="150px" width="200px">        
+                    </span> -->
+
+                <!-- <span class="characters" id="elves" style="visibility: hidden">
+                        <span class="lifeText"> LIFE: </span>
+                        <span class="charLife" value="200"> </span>
+                        <img class="elves" src="images/elves.jpg" alt="" height="150px" width="200px">        
+                    </span> -->
+
+            </div>
+
+
+
+
+
+        </div>
+
+    </center>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/logic.js"></script>
+</body>
+
+
+</html>
