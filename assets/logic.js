@@ -233,7 +233,7 @@ $(document).on('click','.answerOne', function(){
     $("#wolf").hide();
     $("#shepicon").hide();
     $("#attack").hide();
-    $(".introScene").css("background-image", "url(images/scenebridgetroll.jpg)");
+    $(".introScene").css("background-image", "url(images/sceneBridgeTroll.jpg)");
     $('#questions').text(questions[x].question);
     $('#answerOne').text(questions[x].A[0]);
     $('#answerTwo').text(questions[x].B[0]);
