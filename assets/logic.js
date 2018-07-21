@@ -169,7 +169,7 @@ $(document).on('click','.answerOne', function(){
     $('#time').html(time);
     $("#answerOne").attr("class", "answerOneB")
     $("#answerTwo").attr("class", "answerTwoB")
-    $(".introScene").css("background-image", "url(images/SceneScaryWoodWolf.jpg)");
+    $(".introScene").css("background-image", "url(images/scenescarywoodwolf.jpg)");
 
     x++
     $('#questions').text(questions[x].question);
